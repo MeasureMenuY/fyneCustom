@@ -341,12 +341,19 @@ func (f *fileDialog) refreshDir(dir fyne.ListableURI) {
 	f.data = nil
 	f.dataLock.Unlock()
 
+	csvFiles := []fyne
 	files, err := dir.List()
 	if err != nil {
 		fyne.LogError("Unable to read ListableURI "+dir.String(), err)
 		return
 	}
-
+	csvFiles := []fyne.URI{}
+	for i, v := range files {
+		if strings.Contains(v.String(), "csv") {
+			csvFiles = append(csvFiles, files[i])
+		}
+	}
+	files = csvFiles
 	var icons []fyne.URI
 	parent, err := storage.Parent(dir)
 	if err != nil && err != repository.ErrURIRoot {
