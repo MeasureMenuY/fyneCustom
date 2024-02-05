@@ -1,4 +1,4 @@
-module MeMeY.cloud/MMY
+module MeasureMenuY/fyneCustom/v2
 
 go 1.17
 
