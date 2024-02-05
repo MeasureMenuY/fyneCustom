@@ -1,4 +1,4 @@
-module fyne.io/fyne/v2
+module MeMeY.cloud/MMY
 
 go 1.17
 
